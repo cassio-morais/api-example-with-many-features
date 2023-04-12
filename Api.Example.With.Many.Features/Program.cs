@@ -1,3 +1,5 @@
+using Api.Example.With.Many.Features.Rest.ApplicationBuilders;
+using Api.Example.With.Many.Features.Rest.DependencyInjection;
 
 namespace Api.Example.With.Many.Features
 {
@@ -10,23 +12,24 @@ namespace Api.Example.With.Many.Features
             // Add services to the container.
 
             builder.Services.AddControllers();
+
+            builder.Services.AddRouting(opt => opt.LowercaseUrls = true);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
+            builder.Services.AddSwagger();
+            builder.Services.AddVersioning();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
-                app.UseSwagger();
-                app.UseSwaggerUI();
+                app.UseCustomSwagger();
             }
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
-
 
             app.MapControllers();
 
