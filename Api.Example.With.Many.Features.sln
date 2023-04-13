@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		Dockerfile = Dockerfile
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api.Example.With.Many.Features.Rest", "Api.Example.With.Many.Features.Rest\Api.Example.With.Many.Features.Rest.csproj", "{6FEC810B-BC49-48EA-BED0-24AF3BF77545}"
