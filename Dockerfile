@@ -1,7 +1,7 @@
 #Build Stage
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY . .
+COPY ./src .
 RUN dotnet restore
 RUN dotnet publish -c Release -o /artifacts /p:UseAppHost=false --no-restore
 
