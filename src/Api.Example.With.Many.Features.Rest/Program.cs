@@ -22,17 +22,10 @@ namespace Api.Example.With.Many.Features
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
-            if (app.Environment.IsDevelopment())
-            {
-                app.UseCustomSwagger();
-            }
-
+            app.UseCustomSwagger();
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
             app.MapControllers();
-
             app.Run();
         }
     }
