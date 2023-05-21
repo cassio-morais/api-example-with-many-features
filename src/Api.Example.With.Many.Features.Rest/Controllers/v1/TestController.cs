@@ -20,5 +20,6 @@ namespace Api.Example.With.Many.Features.Rest.Controllers.v1
         [ProducesResponseType(typeof(Data), StatusCodes.Status200OK)]
         public IActionResult PostData(Data data) => Ok(data);
     }
+
     public record Data(string Content, IList<string> Strings);
 }
