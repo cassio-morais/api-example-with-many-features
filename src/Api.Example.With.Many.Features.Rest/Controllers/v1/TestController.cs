@@ -10,5 +10,10 @@ namespace Api.Example.With.Many.Features.Rest.Controllers.v1
     {
         [HttpGet("something")]
         public IActionResult Get() => Ok(new { test = "v1" });
+
+        [HttpPost("something/data")]
+        [ProducesResponseType(typeof(Data), StatusCodes.Status200OK)]
+        public IActionResult PostData(Data data) => Ok(data);
     }
+    public record Data(string Content, IList<string> Strings);
 }
